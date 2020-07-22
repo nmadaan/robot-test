@@ -1,6 +1,6 @@
-*** Settings ***^
+ *** Settings ***
 
- Library  SeleniumLibrary^
+ Library  SeleniumLibrary
 
  Test Teardown  Close browser^
 
