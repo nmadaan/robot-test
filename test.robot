@@ -2,10 +2,10 @@
 
  Library  SeleniumLibrary
 
- Test Teardown  Close browser^
+ Test Teardown  Close browser
 
 
- *** Test Cases ***^
+ *** Test Cases ***
 
  Hello chrome
         ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
