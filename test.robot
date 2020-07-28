@@ -1,6 +1,7 @@
 *** Settings ***
 
 Library  SeleniumLibrary
+Library  XvfbRobot
 
 Test Teardown  Close browser
 
