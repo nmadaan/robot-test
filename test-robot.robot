@@ -11,5 +11,5 @@ ${robotVar} =            FooBarBaz
 
 Foo Test Case
     [tags]              RobotWebPage
-    [Documentation]     Created by Ipatios Asmanidis
+    [Documentation]     Test Robot Execution
     Log     Test
