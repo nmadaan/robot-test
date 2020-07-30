@@ -4,7 +4,8 @@ Library  Selenium2Library
 *** Test Cases ***
 Test title
     ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method    ${options}    add_argument    --headless
+    Call Method    ${options}    add_argument    headless
+    Call Method    ${options}    add_argument    disable-gpu
     Create Webdriver  Chrome  chrome_options=${options}
     Maximize Browser Window
     go to   https://google.com
