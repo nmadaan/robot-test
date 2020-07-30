@@ -10,8 +10,10 @@ Open Google
     Start Virtual Display    1920    1080
     Open Chrome Browser
     GoTo    http://google.com
+    Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
+    Capture Page Screenshot
 
 *** Keywords ***
 Open Chrome Browser
