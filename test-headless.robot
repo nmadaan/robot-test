@@ -12,3 +12,6 @@ Test title
     Maximize Browser Window
     capture page screenshot
     close browser
+    
+Test title new
+   Open Browser     https://google.com    headlesschrome
