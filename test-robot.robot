@@ -12,4 +12,4 @@ ${robotVar} =            FooBarBaz
 Foo Test Case
     [tags]              RobotWebPage
     [Documentation]     Created by Ipatios Asmanidis
-    Log     ${USERNAME}
+    Log     Test
