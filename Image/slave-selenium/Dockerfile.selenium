@@ -1,4 +1,4 @@
-  FROM ubuntu:16.04
+FROM ubuntu:16.04
 
 RUN apt-get update \
         && apt-get install -y build-essential libssl-dev libffi-dev python-dev \
@@ -21,3 +21,10 @@ RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
         && rm chromedriver_linux64.zip \
         && mv chromedriver /usr/local/bin \
         && chmod +x /usr/local/bin/chromedriver
+
+RUN apt-get -y install xvfb
+
+# Make sure that Xvfb starts everytime the box/vm is booted:
+echo "Starting X virtual framebuffer (Xvfb) in background..."
+Xvfb -ac :99 -screen 0 1280x1024x16 &
+export DISPLAY=:99
