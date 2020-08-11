@@ -1,13 +1,6 @@
 FROM maven:3.3.9-jdk-8-alpine
 
 # Google Chrome
-
-RUN wget -q https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz \
-        && tar xvzf geckodriver-*.tar.gz \
-        && rm geckodriver-*.tar.gz \
-        && mv geckodriver /usr/local/bin \
-        && chmod a+x /usr/local/bin/geckodriver
-# install chrome and chromedriver in one run command to clear build caches for new versions (both version need to match)
 RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
         && dpkg -i google-chrome*.deb \
         && rm google-chrome*.deb \
