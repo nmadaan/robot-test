@@ -1,6 +1,7 @@
 FROM python:3-windowsservercore
 
-RUN pip install \`r`n --no-cache-dir \
+RUN pip install \
+        --no-cache-dir \
 	robotframework\
 	robotframework-databaselibrary\
 	robotframework-faker\
