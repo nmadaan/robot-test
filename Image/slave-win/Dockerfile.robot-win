@@ -11,7 +11,7 @@ RUN pip install \
 	robotframework-seleniumlibrary
 
 # install chrome and chromedriver in one run command to clear build caches for new versions (both version need to match)
-RUN iwr  'https://dl.google.com/chrome/install/latest/chrome_installer.exe'; \
+RUN iwr  'https://dl.google.com/chrome/install/latest/chrome_installer.exe' \
          -OutFile 'C:\chrome_installer.exe' -UseBasicParsing; \
          Start-Process -FilePath C:\chrome_installer.exe -Args '/silent /install' -Wait; \
          Remove-Item C:\chrome_installer.exe;
