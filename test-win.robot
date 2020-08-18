@@ -19,6 +19,7 @@ Test title
 Hello chrome headless
     ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     ${options.set_binary}=  Set Variable  set_binary="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+    ${options.add_argument}=  Set Variable  add_argument=--no-sandbox
     ${options.add_argument}=  Set Variable  add_argument=--headless
     Create WebDriver  Chrome  chrome_options=${options}
     
@@ -44,6 +45,7 @@ Open Google
 *** Keywords ***
 Open Chrome Browser
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    disable-extensions
     Call Method    ${chrome_options}    add_argument    --start-maximized
     Call Method    ${chrome_options}    set_binary    "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
