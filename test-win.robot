@@ -44,9 +44,8 @@ Open Google
 
 *** Keywords ***
 Open Chrome Browser
-    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    disable-extensions
-    Call Method    ${chrome_options}    add_argument    --start-maximized
-    Call Method    ${chrome_options}    set_binary    "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
+    ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+    Call Method  ${options}  add_argument  --no-sandbox
+    ${prefs}    Create Dictionary    download.default_directory=${TMP_PATH}
+    Call Method    ${options}    add_experimental_option    prefs    ${prefs}
+    Create Webdriver    Chrome    chrome_options=${options}
