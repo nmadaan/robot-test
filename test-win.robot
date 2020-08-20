@@ -5,6 +5,11 @@ Library     Selenium2Library
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
+example 2
+        Create Webdriver     Chrome     executable_path=c:\\webdrivers\\chromedriver.exe
+        go to  https://www.google.com
+        Close All Browsers 
+        
 Test title
     ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${options}    add_argument    --headless
