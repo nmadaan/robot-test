@@ -13,7 +13,7 @@ Hello chrome headless
     Close Browser
     
     
-Hello chrome headless
+Test without Sandbox
     Open Browser    chrome    http://google.com
     Wait Until Page Contains    Google
     Capture Page Screenshot
