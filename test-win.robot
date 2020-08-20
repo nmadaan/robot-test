@@ -14,7 +14,7 @@ Hello chrome headless
     
     
 Test without Sandbox
-    Open Browser    chrome    http://google.com
+    Open Browser    http://google.com   chrome
     Wait Until Page Contains    Google
     Capture Page Screenshot
     Close Browser
