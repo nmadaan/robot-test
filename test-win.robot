@@ -4,19 +4,7 @@ Library     Selenium2Library
 *** Variables ***
 ${TMP_PATH}                 /tmp
 
-*** Test Cases ***    
-Hello chrome headless
-    ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    ${options.set_binary}=  Set Variable  set_binary="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-    ${options.add_argument}=  Set Variable  add_argument=--no-sandbox
-    ${options.add_argument}=  Set Variable  add_argument=--headless
-    Create WebDriver  Chrome  chrome_options=${options}
-    
-    Open Browser   http://www.google.com   chrome
-    Wait Until Page Contains    Google
-    Capture Page Screensho
-    Close Browser
-    
+*** Test Cases *** 
 Open Google Page
     Open Browser    http://google.com     chrome
     Capture Page Screenshot
