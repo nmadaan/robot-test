@@ -5,15 +5,7 @@ Library     Selenium2Library
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
-Hello chrome headless
-    Open Chrome Browser
-    GoTo    http://google.com
-    Wait Until Page Contains    Google
-    Capture Page Screenshot
-    Close Browser
-    
-    
-Test without Sandbox
+Test without Sandbox Option
     Open Browser    http://google.com   chrome
     Wait Until Page Contains    Google
     Capture Page Screenshot
