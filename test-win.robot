@@ -5,14 +5,6 @@ Library     Selenium2Library
 ${TMP_PATH}                 /tmp
 
 *** Test Cases *** 
-Open Google Page
-    Open Browser    http://google.com     chrome
-    Capture Page Screenshot
-    ${title}=       Get Title
-    Should Be Equal    Google    ${title}
-    Capture Page Screenshot
-    Close Browser
-    
 Open Google
     Open Chrome Browser
     GoTo    http://google.com
