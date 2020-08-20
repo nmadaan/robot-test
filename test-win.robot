@@ -4,18 +4,7 @@ Library     Selenium2Library
 *** Variables ***
 ${TMP_PATH}                 /tmp
 
-*** Test Cases ***
-Test title
-    ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method    ${options}    add_argument    --headless
-    #my_create_webdriver   Chrome  ${options}
-    create webdriver  Chrome  chrome_options=${options}
-    Maximize Browser Window
-    go to   https://google.com
-    Maximize Browser Window
-    capture page screenshot
-    close browser
-    
+*** Test Cases ***    
 Hello chrome headless
     ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     ${options.set_binary}=  Set Variable  set_binary="C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
@@ -25,6 +14,7 @@ Hello chrome headless
     
     Open Browser   http://www.google.com   chrome
     Wait Until Page Contains    Google
+    Capture Page Screensho
     Close Browser
     
 Open Google Page
@@ -33,6 +23,7 @@ Open Google Page
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
     Capture Page Screenshot
+    Close Browser
     
 Open Google
     Open Chrome Browser
@@ -41,6 +32,7 @@ Open Google
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
     Capture Page Screenshot
+    Close Browser
 
 *** Keywords ***
 Open Chrome Browser
