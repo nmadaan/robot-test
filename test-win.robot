@@ -5,11 +5,6 @@ Library     Selenium2Library
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
-example 2
-        Create Webdriver     Chrome     executable_path=c:\\webdrivers\\chromedriver.exe
-        go to  https://www.google.com
-        Close All Browsers 
-        
 Test title
     ${options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${options}    add_argument    --headless
@@ -29,11 +24,11 @@ Hello chrome headless
     Create WebDriver  Chrome  chrome_options=${options}
     
     Open Browser   http://www.google.com   chrome
-    Wait Until Page Contains    ffgdfgdfgdfgdfg
+    Wait Until Page Contains    Google
     Close Browser
     
 Open Google Page
-    Open Browser    http://google.com     headlesschrome
+    Open Browser    http://google.com     chrome
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
