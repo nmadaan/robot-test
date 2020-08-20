@@ -4,7 +4,14 @@ Library     Selenium2Library
 *** Variables ***
 ${TMP_PATH}                 /tmp
 
-*** Test Cases *** 
+*** Test Cases ***
+Hello chrome headless
+    Open Chrome Browser
+    Wait Until Page Contains    Google
+    Capture Page Screenshot
+    Close Browser
+
+
 Open Google
     Open Chrome Browser
     GoTo    http://google.com
