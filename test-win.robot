@@ -7,6 +7,14 @@ ${TMP_PATH}                 /tmp
 *** Test Cases ***
 Hello chrome headless
     Open Chrome Browser
+    GoTo    http://google.com
+    Wait Until Page Contains    Google
+    Capture Page Screenshot
+    Close Browser
+    
+    
+Hello chrome headless
+    Open Browser    chrome    http://google.com
     Wait Until Page Contains    Google
     Capture Page Screenshot
     Close Browser
