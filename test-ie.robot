@@ -14,9 +14,9 @@ Open Google IE
     
 *** Keywords ***
 Open IE Browser
-   ${dc}   Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.INTERNETEXPLORER  sys, selenium.webdriver
-   ${dc}    Create Dictionary     ignoreProtectedModeSettings=${True}
-   Open Browser    www.google.com    ie     desired_capabilitie=${dc}
+    ${dc}   Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.INTERNETEXPLORER  sys, selenium.webdriver
+    Set To Dictionary   ${dc}   ignoreProtectedModeSettings   ${True}
+    Open Browser    www.google.com  ie  desired_capabilitie=${dc}
 
    ${s2l}= Get Library Instance    Selenium2Library
    Log Dictionary  ${s2l._current_browser().capabilities}  # actual capabilities
