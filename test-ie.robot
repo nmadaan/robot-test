@@ -1,6 +1,7 @@
   
 *** Settings ***
 Library     Selenium2Library
+Library     Collections
 
 *** Test Cases ***    
 Open Google IE
