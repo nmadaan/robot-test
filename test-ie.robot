@@ -6,6 +6,7 @@ Library     Collections
 *** Test Cases ***    
 Open Google IE
     Open IE Browser
+    GoTo    http://google.com
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
@@ -15,10 +16,6 @@ Open Google IE
     
 *** Keywords ***
 Open IE Browser
-    ${dc}   Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.INTERNETEXPLORER  sys, selenium.webdriver
-    Set To Dictionary   ${dc}   ignoreProtectedModeSettings   ${True}
-    Set To Dictionary   ${dc}   INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS   ${True}
-    Open Browser    www.google.com  ie  desired_capabilitie=${dc}
-
-   ${s2l}= Get Library Instance    Selenium2Library
-   Log Dictionary  ${s2l._current_browser().capabilities}  # actual capabilities
+    ${options}= Evaluate  sys.modules['selenium.webdriver'].DesiredCapabilities.INTERNETEXPLORER sys,selenium.webdriver
+    Call Method    ${options}    add_argument      INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS:True    
+    Create WebDriver  Internet Explorer ie_options=${options}
