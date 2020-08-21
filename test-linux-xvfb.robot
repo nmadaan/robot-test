@@ -1,13 +1,8 @@
 *** Settings ***
 Library     Selenium2Library
-#Library     XvfbRobot
-
-*** Variables ***
-${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 Open Google
-    #Start Virtual Display    1920    1080
     Open Chrome Browser
     GoTo    http://google.com
     Capture Page Screenshot
@@ -19,7 +14,5 @@ Open Google
 Open Chrome Browser
     ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method  ${options}  add_argument  --no-sandbox
-    #Call Method  ${options}  add_argument  --headless
-    ${prefs}    Create Dictionary    download.default_directory=${TMP_PATH}
-    Call Method    ${options}    add_experimental_option    prefs    ${prefs}
+    Call Method  ${options}  add_argument  --headless
     Create Webdriver    Chrome    chrome_options=${options}
