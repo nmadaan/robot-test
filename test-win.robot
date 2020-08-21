@@ -5,13 +5,21 @@ Library     Selenium2Library
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
-Test without Sandbox Option
-    Open Browser    http://google.com   chrome
-    Wait Until Page Contains    Google
+#Test without Sandbox Option
+#    Open Browser    http://google.com   chrome
+#    Wait Until Page Contains    Google
+#    Capture Page Screenshot
+#    Close Browser
+
+Test Sandbox Option
+    Open Chrome Browser
+    GoTo    https://www.bing.com
+    Capture Page Screenshot
+    ${title}=       Get Title
+    Should Be Equal    Bing    ${title}
     Capture Page Screenshot
     Close Browser
-
-
+    
 Open Google
     Open Chrome Browser
     GoTo    http://google.com
