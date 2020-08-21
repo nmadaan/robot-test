@@ -29,14 +29,6 @@ Open Google
     Capture Page Screenshot
     Close Browser
     
-Open Google Firefox
-    Open Browser    http://google.com      Firefox
-    Capture Page Screenshot
-    ${title}=       Get Title
-    Should Be Equal    Google    ${title}
-    Capture Page Screenshot
-    Close Browser
-
 *** Keywords ***
 Open Chrome Browser
     ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
