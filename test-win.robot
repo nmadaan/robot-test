@@ -33,6 +33,6 @@ Open Google
 Open Chrome Browser
     ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method  ${options}  add_argument  --no-sandbox
-    ${prefs}    Create Dictionary    download.default_directory=${TMP_PATH}
-    Call Method    ${options}    add_experimental_option    prefs    ${prefs}
+    #${prefs}    Create Dictionary    download.default_directory=${TMP_PATH}
+    #Call Method    ${options}    add_experimental_option    prefs    ${prefs}
     Create Webdriver    Chrome    chrome_options=${options}
