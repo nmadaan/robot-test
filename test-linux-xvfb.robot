@@ -1,13 +1,13 @@
 *** Settings ***
 Library     Selenium2Library
-Library     XvfbRobot
+#Library     XvfbRobot
 
 *** Variables ***
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 Open Google
-    Start Virtual Display    1920    1080
+    #Start Virtual Display    1920    1080
     Open Chrome Browser
     GoTo    http://google.com
     Capture Page Screenshot
