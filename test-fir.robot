@@ -1,12 +1,14 @@
   
 *** Settings ***
 Library     Selenium2Library
+Library     OperatingSystem
 
 *** Variables ***
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 Open Google Firefox
+    Set Environment Variable    no_proxy    127.0.0.1
     Open Browser       http://google.com       firefox
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
