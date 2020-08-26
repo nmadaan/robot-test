@@ -12,7 +12,7 @@ Open Google Firefox
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
     Capture Page Screenshot
-    Close Browser
+    #Close Browser
 
 *** Keywords ***
 Open Chrome Browser
