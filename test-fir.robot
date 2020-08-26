@@ -7,7 +7,7 @@ ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 Open Google Firefox
-    Open Browser    http://google.com    FF
+    Open Browser       http://google.com       firefox
     #Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
