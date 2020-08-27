@@ -14,7 +14,14 @@ Open Google Firefox
     Should Be Equal    Google    ${title}
     #Capture Page Screenshot
     #Close Browser
-
+    
+Open Firefox
+    ${options}  Evaluate  sys.modules['selenium.webdriver'].firefox.webdriver.Options() sys, selenium.webdriver
+    Call Method  ${options}  add_argument  -headless
+    Create Webdriver    Firefox    firefox_options=${options}
+    Go To      http://google.com
+    Capture Page Screenshot
+    
 *** Keywords ***
 Open Chrome Browser
     ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
