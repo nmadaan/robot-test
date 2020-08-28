@@ -10,7 +10,7 @@ ${TMP_PATH}                 /tmp
 *** Test Cases ***
 Open Firefox Try
     ${options}   Evaluate    sys.modules['selenium.webdriver.firefox.options'].Options()    sys, selenium.webdriver
-    Call Method   ${options}    add_argument     "log": {"level": "debug"}
+    Call Method   ${options}    add_argument     "log": {"level": "trace"}
     Create Webdriver   Firefox   firefox_options=${options}
     Go To http://www.python.org
 
