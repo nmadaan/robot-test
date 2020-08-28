@@ -2,6 +2,7 @@
 *** Settings ***
 Library     Selenium2Library
 Library     OperatingSystem
+Library     Collections
 
 *** Variables ***
 ${TMP_PATH}                 /tmp
@@ -17,6 +18,7 @@ Open Google Firefox
     
 Open Firefox
     ${options}  Evaluate  sys.modules['selenium.webdriver'].firefox.webdriver.Options()   sys, selenium.webdriver
+    Call Method  ${options}  add_argument  --no-sandbox
     Call Method  ${options}  add_argument  -headless
     Create Webdriver    Firefox    firefox_options=${options}
     Go To      http://google.com
