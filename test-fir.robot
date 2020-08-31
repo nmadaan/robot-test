@@ -13,8 +13,8 @@ Open Google Firefox
     Call Method  ${options}  add_argument   "log": {"level": "trace"}
     Create Webdriver    Firefox    firefox_options=${options}
     Go To      http://google.com
-    ${title}=       Get Title
     Capture Page Screenshot
+    ${title}=       Get Title
     Should Be Equal    Google    ${title}
     Capture Page Screenshot
     Close Browser
