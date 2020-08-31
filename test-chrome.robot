@@ -6,7 +6,8 @@ ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 Open Google Chrome
-    Open Browser    https://www.bing.com    Chrome
+    Open Chrome Browser
+    GoTo     https://www.bing.com
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Bing    ${title}
