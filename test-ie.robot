@@ -9,4 +9,8 @@ Test IE InPrivate
     Set To Dictionary   ${dc}   ignoreProtectedModeSettings    ${True}
     Set To Dictionary   ${dc}   ie.forceCreateProcessApi       ${True}
     Set To Dictionary   ${dc}   ie.browserCommandLineSwitches=-private
-    Open Browser    www.google.com  ie  desired_capabilitie=${dc}
+    Open Browser    https://google.com     ie     desired_capabilitie=${dc}
+
+
+Test IE InPrivate
+    Open Browser    https://google.com    ie
