@@ -20,7 +20,7 @@ Open Google Firefox Options
     ${options}  Evaluate  sys.modules['selenium.webdriver'].firefox.webdriver.Options()   sys, selenium.webdriver
     Call Method  ${options}  add_argument   "log": {"level": "trace"}
     Create Webdriver    Firefox    firefox_options=${options}
-    Go To      http://google.com
+    Go To      https://www.bing.com
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
