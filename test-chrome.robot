@@ -5,13 +5,7 @@ Library     Selenium2Library
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
-#Test without Sandbox Option
-#    Open Browser    http://google.com   chrome
-#    Wait Until Page Contains    Google
-#    Capture Page Screenshot
-#    Close Browser
-
-Open Google
+Open Google Chrome
     Open Browser    https://www.bing.com    Chrome
     Capture Page Screenshot
     ${title}=       Get Title
@@ -19,7 +13,7 @@ Open Google
     Capture Page Screenshot
     Close Browser
     
-Open Google Sandbox Option
+Open Google Chrome Option
     Open Chrome Browser
     GoTo    http://google.com
     Capture Page Screenshot
