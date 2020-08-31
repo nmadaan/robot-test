@@ -14,7 +14,7 @@ Open Google IE options
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
     Capture Page Screenshot
-    Close Browse
+    Close Browser
     
 Open Google IE 
     Open Browser    https://google.com    ie
