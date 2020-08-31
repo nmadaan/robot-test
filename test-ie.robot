@@ -10,6 +10,7 @@ Open Google IE options
     Set To Dictionary   ${dc}   ie.forceCreateProcessApi       ${True}
     Set To Dictionary   ${dc}   ie.browserCommandLineSwitches=-private
     Open Browser    https://google.com     ie
+    Maximize Browser Window
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
