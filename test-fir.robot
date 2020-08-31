@@ -9,8 +9,10 @@ ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 Open Google Firefox
-    Set Environment Variable   no_proxy   127.0.0.1
-    Open Browser       http://google.com       firefox
+    ${options}  Evaluate  sys.modules['selenium.webdriver'].firefox.webdriver.Options()   sys, selenium.webdriver
+    Call Method  ${options}  add_argument   "log": {"level": "trace"}
+    Create Webdriver    Firefox    firefox_options=${options}
+    Go To      http://google.com
     ${title}=       Get Title
     Capture Page Screenshot
     Should Be Equal    Google    ${title}
