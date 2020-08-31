@@ -23,6 +23,7 @@ Open Google Firefox Options
     Create Webdriver    Firefox    firefox_options=${options}
     Go To      http://google.com
     Capture Page Screenshot
+    ${title}=       Get Title
     Should Be Equal    Google    ${title}
     Capture Page Screenshot
     Close Browser
