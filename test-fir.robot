@@ -8,34 +8,20 @@ Library     Collections
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
-Open Firefox Try
-    ${options}   Evaluate    sys.modules['selenium.webdriver.firefox.options'].Options()    sys, selenium.webdriver
-    Call Method   ${options}    add_argument     "log": {"level": "trace"}
-    Create Webdriver   Firefox   firefox_options=${options}
-    Go To    http://www.python.org
-
-
 Open Google Firefox
-    Set Environment Variable    no_proxy    127.0.0.1
     Open Browser       http://google.com       firefox
     ${title}=       Get Title
+    Capture Page Screenshot
     Should Be Equal    Google    ${title}
-    #Capture Page Screenshot
-    #Close Browser
+    Capture Page Screenshot
+    Close Browser
     
-Open Firefox
+Open Google Firefox Options
     ${options}  Evaluate  sys.modules['selenium.webdriver'].firefox.webdriver.Options()   sys, selenium.webdriver
-    Call Method  ${options}  add_argument  --no-sandbox
-    Call Method  ${options}  add_argument  -headless
+    Call Method  ${options}  add_argument   "log": {"level": "trace"}
     Create Webdriver    Firefox    firefox_options=${options}
     Go To      http://google.com
     Capture Page Screenshot
-    
-*** Keywords ***
-Open Chrome Browser
-    ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method  ${options}  add_argument  --no-sandbox
-    Call Method  ${options}  add_argument  --headless
-    #${prefs}    Create Dictionary    download.default_directory=${TMP_PATH}
-    #Call Method    ${options}    add_experimental_option    prefs    ${prefs}
-    Create Webdriver    Chrome    chrome_options=${options}
+    Should Be Equal    Google    ${title}
+    Capture Page Screenshot
+    Close Browser
