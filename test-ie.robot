@@ -4,14 +4,6 @@ Library     Selenium2Library
 Library     Collections
 
 *** Test Cases ***
-Open Google IE 
-    Open Browser    https://google.com    ie
-    Capture Page Screenshot
-    Capture Page Screenshot
-    Should Be Equal    Google    ${title}
-    Capture Page Screenshot
-    Close Browser
-
 Open Google IE options
     ${dc}   Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.INTERNETEXPLORER  sys, selenium.webdriver
     Set To Dictionary   ${dc}   ignoreProtectedModeSettings    ${True}
@@ -19,7 +11,15 @@ Open Google IE options
     Set To Dictionary   ${dc}   ie.browserCommandLineSwitches=-private
     Open Browser    https://google.com     ie     desired_capabilitie=${dc}
     Capture Page Screenshot
-    Capture Page Screenshot
+    ${title}=       Get Title
     Should Be Equal    Google    ${title}
     Capture Page Screenshot
     Close Browse
+    
+Open Google IE 
+    Open Browser    https://google.com    ie
+    Capture Page Screenshot
+    ${title}=       Get Title
+    Should Be Equal    Google    ${title}
+    Capture Page Screenshot
+    Close Browser
