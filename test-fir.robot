@@ -30,14 +30,6 @@ Open Firefox
     Create Webdriver    Firefox    firefox_options=${options}
     Go To      http://google.com
     Capture Page Screenshot
-
-Specifying Path To GeckoDriver
-    ${ff default caps}    Evaluate    sys.modules['selenium.webdriver'].common.desired_capabilities.DesiredCapabilities.FIREFOX    sys,selenium.webdriver
-    Set To Dictionary    ${ff default caps}    marionette=${True}
-    Create Webdriver    Firefox    executable_path=C:\\webdrivers\\geckodriver.exe
-    Go To    https://stackoverflow.com
-    Sleep    2 s
-    [Teardown]    Close All Browsers
     
 *** Keywords ***
 Open Chrome Browser
