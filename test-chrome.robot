@@ -11,16 +11,15 @@ ${TMP_PATH}                 /tmp
 #    Capture Page Screenshot
 #    Close Browser
 
-Test Sandbox Option
-    Open Chrome Browser
-    GoTo    https://www.bing.com
+Open Google
+    Open Browser    https://www.bing.com    Chrome
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Bing    ${title}
     Capture Page Screenshot
     Close Browser
     
-Open Google
+Open Google Sandbox Option
     Open Chrome Browser
     GoTo    http://google.com
     Capture Page Screenshot
