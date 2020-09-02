@@ -8,14 +8,6 @@ Library     Collections
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
-Open Google Firefox
-    Open Browser     http://google.com    Firefox
-    Capture Page Screenshot
-    ${title}=       Get Title
-    Should Be Equal    Google    ${title}
-    Capture Page Screenshot
-    Close Browser
-    
 Open Google Firefox Options
     ${options}  Evaluate  sys.modules['selenium.webdriver'].firefox.webdriver.Options()   sys, selenium.webdriver
     Call Method  ${options}  add_argument   "log": {"level": "trace"}
@@ -24,5 +16,13 @@ Open Google Firefox Options
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Bing    ${title}
+    Capture Page Screenshot
+    Close Browser
+    
+Open Google Firefox
+    Open Browser     http://google.com    Firefox
+    Capture Page Screenshot
+    ${title}=       Get Title
+    Should Be Equal    Google    ${title}
     Capture Page Screenshot
     Close Browser
