@@ -20,7 +20,7 @@ Open Google Firefox Options
     Close Browser
     
 Open Google Firefox
-    Open Browser     http://google.com    Firefox
+    Open Browser     http://google.com    Firefox    ff_profile_dir=set_preference("network.proxy.no_proxies_on", "localhost, 127.0.0.1")
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
