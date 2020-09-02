@@ -9,7 +9,7 @@ ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 Open Google Firefox
-    Open Browser     http://google.com    Firefox    ff_profile_dir=set_preference("browser.tabs.remote.autostart", false)
+    Open Browser     http://google.com    Firefox    ff_profile_dir=set_preference("browser.tabs.remote.autostart", "false")
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
