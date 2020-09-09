@@ -11,7 +11,6 @@ ${TMP_PATH}                 /tmp
 
 Open Firefox browser 
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].FirefoxOptions()    sys   
-    Run Keyword If  ${HEADLESS}  Call Method    ${options}   add_argument    --headless
     Call Method    ${options}   set_preference    dom.disable_beforeunload  False
     Call Method    ${options}   set_capability    unhandledPromptBehavior  ignore
     Call Method    ${options}   set_capability    unexpectedAlertBehaviour  ignore
