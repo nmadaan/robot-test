@@ -11,18 +11,19 @@ ${TMP_PATH}                 /tmp
 
 Open Firefox browser 
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].FirefoxOptions()    sys   
-    Call Method    ${options}   set_preference    dom.disable_beforeunload  False
-    Call Method    ${options}   set_capability    unhandledPromptBehavior  ignore
-    Call Method    ${options}   set_capability    unexpectedAlertBehaviour  ignore
+    Call Method    ${options}   set_preference    browser.tabs.remote.autostart  False
+    Call Method    ${options}   set_preference    browser.tabs.remote.autostart.2  False
+    Call Method    ${options}   set_preference    security.sandbox.content.level  5
 
-    ${profile}=    Evaluate    sys.modules['selenium.webdriver'].FirefoxProfile()    sys   
-    Call Method    ${profile}   set_preference    dom.disable_beforeunload  False
+    #${profile}=    Evaluate    sys.modules['selenium.webdriver'].FirefoxProfile()    sys   
+    #Call Method    ${profile}   set_preference    dom.disable_beforeunload  False
     
-    ${desired_capabilities}=    Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.FIREFOX    sys   
-    Set To Dictionary   ${desired_capabilities}  unhandledPromptBehavior  ignore 
-    Set To Dictionary   ${desired_capabilities}  unexpectedAlertBehaviour  ignore 
+    #${desired_capabilities}=    Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.FIREFOX    sys   
+    #Set To Dictionary   ${desired_capabilities}  unhandledPromptBehavior  ignore 
+    #Set To Dictionary   ${desired_capabilities}  unexpectedAlertBehaviour  ignore 
     
-    Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile}  desired_capabilities=${desired_capabilities}
+    #Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile}  desired_capabilities=${desired_capabilities}
+    Open Browser  http://google.com  Firefox    options=${options}
     
 
 Open Google Firefox 2
