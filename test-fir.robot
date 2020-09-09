@@ -20,7 +20,7 @@ Open Firefox browser
     Call Method    ${profile}   set_preference    browser.tabs.remote.autostart.2  False
     Call Method    ${profile}   set_preference    security.sandbox.content.level  5
     
-    #${desired_capabilities}=    Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.FIREFOX    sys   
+    ${desired_capabilities}=    Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.FIREFOX    sys   
     Set To Dictionary   ${desired_capabilities}  browser.tabs.remote.autostart  False 
     Set To Dictionary   ${desired_capabilities}  browser.tabs.remote.autostart.2  False
     Set To Dictionary   ${desired_capabilities}  security.sandbox.content.level  5
