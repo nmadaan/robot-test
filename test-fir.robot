@@ -9,7 +9,7 @@ ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 Open Google Firefox
-    Open Browser     http://google.com    Firefox    ff_profile_dir=set_preference("security.sandbox.content.level", "0")
+    Open Browser     http://google.com    Firefox    ff_profile_dir=set_preference("security.sandbox.content.level", 5)
     Sleep    60 seconds
     Capture Page Screenshot
     ${title}=       Get Title
