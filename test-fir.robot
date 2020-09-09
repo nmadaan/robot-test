@@ -11,7 +11,7 @@ ${TMP_PATH}                 /tmp
 
 Open Google Firefox 1
     ${preferences} =    Create Dictionary   browser.tabs.remote.autostart  False   browser.tabs.remote.autostart.2   False   security.sandbox.content.level  5  
-    Open Browser     http://google.com    desired_capabilities=${preferences}
+    Open Browser     http://google.com    Firefox      desired_capabilities=${preferences}
     
 
 Open Google Firefox 2
