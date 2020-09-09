@@ -8,7 +8,13 @@ Library     Collections
 ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
-Open Google Firefox
+
+Open Google Firefox 1
+    ${preferences} =    Create Dictionary   browser.tabs.remote.autostart  False   browser.tabs.remote.autostart.2   False   security.sandbox.content.level  5  
+    Open Browser     http://google.com    desired_capabilities=${preferences}
+    
+
+Open Google Firefox 2
     Open Browser     http://google.com    Firefox    ff_profile_dir=set_preference("security.sandbox.content.level", 5)
     Sleep    60 seconds
     Capture Page Screenshot
