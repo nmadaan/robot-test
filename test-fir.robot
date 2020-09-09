@@ -9,9 +9,21 @@ ${TMP_PATH}                 /tmp
 
 *** Test Cases ***
 
-Open Google Firefox 1
-    ${preferences} =    Create Dictionary   browser.tabs.remote.autostart  False   browser.tabs.remote.autostart.2   False   security.sandbox.content.level  5  
-    Open Browser     http://google.com    Firefox      desired_capabilities=${preferences}
+Open Firefox browser 
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].FirefoxOptions()    sys   
+    Run Keyword If  ${HEADLESS}  Call Method    ${options}   add_argument    --headless
+    Call Method    ${options}   set_preference    dom.disable_beforeunload  False
+    Call Method    ${options}   set_capability    unhandledPromptBehavior  ignore
+    Call Method    ${options}   set_capability    unexpectedAlertBehaviour  ignore
+
+    ${profile}=    Evaluate    sys.modules['selenium.webdriver'].FirefoxProfile()    sys   
+    Call Method    ${profile}   set_preference    dom.disable_beforeunload  False
+    
+    ${desired_capabilities}=    Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.FIREFOX    sys   
+    Set To Dictionary   ${desired_capabilities}  unhandledPromptBehavior  ignore 
+    Set To Dictionary   ${desired_capabilities}  unexpectedAlertBehaviour  ignore 
+    
+    Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile}  desired_capabilities=${desired_capabilities}
     
 
 Open Google Firefox 2
