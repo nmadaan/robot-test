@@ -25,7 +25,7 @@ Open Firefox browser
     #Set To Dictionary   ${desired_capabilities}  unexpectedAlertBehaviour  ignore 
     
     #Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile}  desired_capabilities=${desired_capabilities}
-    Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile
+    Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile}
     
 
 Open Google Firefox 2
