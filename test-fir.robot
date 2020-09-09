@@ -21,11 +21,12 @@ Open Firefox browser
     Call Method    ${profile}   set_preference    security.sandbox.content.level  5
     
     #${desired_capabilities}=    Evaluate    sys.modules['selenium.webdriver'].DesiredCapabilities.FIREFOX    sys   
-    #Set To Dictionary   ${desired_capabilities}  unhandledPromptBehavior  ignore 
-    #Set To Dictionary   ${desired_capabilities}  unexpectedAlertBehaviour  ignore 
+    Set To Dictionary   ${desired_capabilities}  browser.tabs.remote.autostart  False 
+    Set To Dictionary   ${desired_capabilities}  browser.tabs.remote.autostart.2  False
+    Set To Dictionary   ${desired_capabilities}  security.sandbox.content.level  5
     
     #Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile}  desired_capabilities=${desired_capabilities}
-    Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile}
+    Open Browser  http://google.com  Firefox    options=${options}  ff_profile_dir=${profile}   desired_capabilities=${desired_capabilities}
     
 
 Open Google Firefox 2
