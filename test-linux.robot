@@ -11,7 +11,10 @@ Open Google Chrome
     Capture Page Screenshot
 
 Open Google Firefox
-    Open Browser    http://google.com    Firefox
+    ${options}  Evaluate  sys.modules['selenium.webdriver'].firefox.webdriver.Options()   sys, selenium.webdriver
+    Call Method  ${options}  add_argument   --headless
+    Create Webdriver    Firefox    firefox_options=${options}
+    Go To      https://www.bing.com
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
