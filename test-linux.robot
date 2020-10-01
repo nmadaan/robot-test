@@ -2,8 +2,16 @@
 Library     Selenium2Library
 
 *** Test Cases ***
-Open Google
+Open Google Chrome
     Open Chrome Browser
+    GoTo    http://google.com
+    Capture Page Screenshot
+    ${title}=       Get Title
+    Should Be Equal    Google    ${title}
+    Capture Page Screenshot
+
+Open Google Firefox
+    Open Browser     Firefox
     GoTo    http://google.com
     Capture Page Screenshot
     ${title}=       Get Title
