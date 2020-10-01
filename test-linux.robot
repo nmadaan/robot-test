@@ -17,7 +17,7 @@ Open Google Firefox
     Go To      https://www.bing.com
     Capture Page Screenshot
     ${title}=       Get Title
-    Should Be Equal    Google    ${title}
+    Should Be Equal    Bing    ${title}
     Capture Page Screenshot
 
 *** Keywords ***
