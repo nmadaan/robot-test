@@ -11,8 +11,7 @@ Open Google Chrome
     Capture Page Screenshot
 
 Open Google Firefox
-    Open Browser     Firefox
-    GoTo    http://google.com
+    Open Browser    http://google.com    Firefox
     Capture Page Screenshot
     ${title}=       Get Title
     Should Be Equal    Google    ${title}
