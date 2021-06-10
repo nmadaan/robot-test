@@ -3,7 +3,6 @@ Library     Selenium2Library
 
 *** Test Cases ***
 Open Google Chrome
-    ${width}    ${height}=   Get Window Size
     Open Browser     http://google.com    Chrome
     Set Window Size    1916    956
     ${width}    ${height}=   Get Window Size
